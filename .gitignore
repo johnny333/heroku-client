@@ -1,0 +1,4 @@
+.idea/
+/graphical-ide-client/node_modules/
+!/graphical-ide-client/.gitignore
+/graphical-ide-backend/node_modules/

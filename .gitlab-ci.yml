@@ -1,0 +1,11 @@
+image: node:6.4.0
+
+variables:
+
+services:
+all_tests:
+  script:
+   - cd graphical-ide-client && npm install -f
+   - cd ..
+   - cd graphical-ide-backend && npm install -f
+

@@ -1,4 +1,4 @@
-image: angular-cli:1.0.0-beta.19
+image: gabrielaraujof/angular-cli
 
 variables:
 

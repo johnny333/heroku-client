@@ -2,3 +2,5 @@
 /graphical-ide-client/node_modules/
 !/graphical-ide-client/.gitignore
 /graphical-ide-backend/node_modules/
+/graphical-ide-backend/npm-debug.log
+/npm-debug.log

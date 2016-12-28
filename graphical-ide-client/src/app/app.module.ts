@@ -5,6 +5,9 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import {appRoutes} from "./sheards/classes/routers/router";
+import {AdminModule} from "./modules/admin/admin.module";
+import {CustomerModule} from "./modules/customer/customer.module";
+import {PublicModule} from "./modules/public/public.module";
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import {appRoutes} from "./sheards/classes/routers/router";
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AdminModule,
+    CustomerModule,
+    PublicModule
   ],
   providers: [],
   bootstrap: [AppComponent]

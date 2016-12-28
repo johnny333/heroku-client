@@ -1,9 +1,6 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
-import { CustomerDashboardComponent } from './customer-dashboard.component';
+import {async, ComponentFixture, TestBed} from "@angular/core/testing";
+import {CustomerDashboardComponent} from "./customer-dashboard.component";
 
 describe('CustomerDashboardComponent', () => {
   let component: CustomerDashboardComponent;
@@ -11,9 +8,9 @@ describe('CustomerDashboardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CustomerDashboardComponent ]
+      declarations: [CustomerDashboardComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -17,7 +17,12 @@ app.post('/api/home/register', function(req, res) {
     UserService().register(req.body);
     res.send(req.body);
 });
+app.post('/api/home/login', function(req, res) {
+    let result =UserService().login(req.body.email,req.body.password);
+    res.send(result);
+});
 
 app.listen(process.env.PORT||9000,function () {
+
     console.log("server is up")
 });

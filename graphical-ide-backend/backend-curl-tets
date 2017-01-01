@@ -1,1 +1,3 @@
-curl -H "Content-Type: application/json" -X POST -d '{"username":"xyz","password":"xyz"}' http://localhost:9000/users
+curl -H "Content-Type: application/json" -X POST -d '{"name":"admin","email":"jakub@kolecki.gbzl.pl","password":"admin"}' http://localhost:9000/api/home/register
+
+curl -H "Content-Type: application/json" -X POST -d '{"email":"jakub@kolecki.gbzl.pl","password":"admin"}' http://localhost:9000/api/home/login

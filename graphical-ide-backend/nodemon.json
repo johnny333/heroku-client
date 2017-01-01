@@ -1,0 +1,8 @@
+{
+  "verbose": true,
+  "ignore": ["db-settings/*.json", "json-db/*.json"],
+  "execMap": {
+    "rb": "ruby",
+    "pde": "processing --sketch={{pwd}} --run"
+  }
+}

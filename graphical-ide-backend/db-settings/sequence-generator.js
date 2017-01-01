@@ -2,43 +2,44 @@
  * Created by jakub on 31.12.16.
  */
 const openDB = require('json-file-db');
-const seqDB = openDB('./db-settings/seq.json', true, false);
-const startSeqValue = 0;
+const Promise = require('promise');
+const seqDB = openDB('./db-settings/seq.json');
+
+const seqModel = {
+    id: null,
+    value: null
+};
 
 const SequenceGenerator = function () {
-
-    const getSequence = function (key) {
-        let resultValue =startSeqValue;
-        seqDB.getSingle(key, function (error, result) {
-
+    let startSeqValue = 1;
+    const getSequence = function (id) {
+        let resultValue = null;
+        let sync = true;
+        seqDB.getSingle({id}, function (error, result) {
             console.log("getsequence error,result", error, result);
             if (error || !result) {
-                seqDB.put({key, value: startSeqValue}, function (errorP) {
-                    console.log(errorP);
-                    return {error: errorP};
+                seqDB.put({id, value: startSeqValue}, function (errorP) {
+                    console.log("errorP", errorP);
+                    resultValue = startSeqValue;
+                    sync = false;
                 });
-                resultValue= startSeqValue;
             }
             else {
-                seqDB.delete(result, function (errorD, resultD) {
-                    console.log("getsequence errorD,resultD", errorD, resultD);
-
-                    if (errorD) {
-                        console.log(errorD);
-                        resultValue= startSeqValue;
-                    }
-                    result.value = result.value ? result.value++ : startSeqValue;
-                    seqDB.put(result, function (errorU) {
-                        console.log("getsequence errorU", errorU);
-                        return {error: errorU};
-                    });
-                    resultValue= result.value;
+                seqDB.put({id: result.id, value: result.value+1}, function (errorU) {
+                    console.log("getsequence errorU", errorU, result);
+                    resultValue = result.value+1;
+                    sync = false;
                 });
             }
-
         });
+
+        while (sync) {
+            require('deasync').sleep(100);
+        }
+        console.log("exit");
         return resultValue;
     };
+
     return {
         getSequence: getSequence
     };

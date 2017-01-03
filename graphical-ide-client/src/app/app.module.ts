@@ -8,7 +8,7 @@ import {CustomerModule} from "./modules/customer/customer.module";
 import {PublicModule} from "./modules/public/public.module";
 import {appRoutes} from "./sheards/classes/routers/router";
 import {RouterModule} from "@angular/router";
-
+import 'hammerjs';
 @NgModule({
   declarations: [
     AppComponent

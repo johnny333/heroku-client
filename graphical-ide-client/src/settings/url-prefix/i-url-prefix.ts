@@ -1,6 +1,11 @@
-export interface IUrlPrefix {
+export interface IUrlPrefix extends IBackendPrefix,IFrontendPrefix{
+
+}
+export interface IBackendPrefix {
   getHostURL(): string,
-  getWebURL(): string,
   getHostUrlWithParams(...urlParams): string,
+}
+export interface IFrontendPrefix {
+  getWebURL(): string,
   getWebUrlWithParams(...urlParams): string
 }

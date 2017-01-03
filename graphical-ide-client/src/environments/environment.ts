@@ -10,7 +10,7 @@ export const environment = {
   NG_HOST: "127.0.0.1",
   NG_PORT: 4012,
   API_HOST: "127.0.0.1",
-  API_PORT: 3000,
+  API_PORT: 9001,
   getApiAddress: ()=> {
     return `${this.API_PROTOCOL}://${this.API_HOST}:${this.API_PORT}/`;
   },

@@ -9,6 +9,7 @@ import {PublicModule} from "./modules/public/public.module";
 import {appRoutes} from "./sheards/classes/routers/router";
 import {RouterModule} from "@angular/router";
 import 'hammerjs';
+import {Ng2Webstorage} from "ng2-webstorage";
 @NgModule({
   declarations: [
     AppComponent
@@ -18,6 +19,7 @@ import 'hammerjs';
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
+    Ng2Webstorage,
     AdminModule,
     CustomerModule,
     PublicModule

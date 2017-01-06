@@ -1,7 +1,23 @@
 import {IUrlPrefix} from "../settings/url-prefix/i-url-prefix";
 import {EAppUrlParts} from "./e-app-url-parts.enum";
-import {environment} from "../environments/environment";
 export class AppUrlPrefix implements IUrlPrefix {
+  environment = {
+    production: true,
+    NG_PROTOCOL: "http",
+    API_PROTOCOL: "http",
+    NG_HOST: "127.0.0.1",
+    NG_PORT: 4012,
+    API_HOST: "127.0.0.1",
+    API_PORT: 9001,
+    getApiAddress: ()=> {
+      return "http://127.0.0.1:9001/";
+    },
+    getNgAddress: ()=> {
+      return "http://127.0.0.1:4012/";
+    }
+  };
+
+
   getHostUrlWithParams(urlParams): string {
     let prepareURL = this.getHostURL();
     urlParams.forEach(item => {
@@ -19,10 +35,10 @@ export class AppUrlPrefix implements IUrlPrefix {
   }
 
   getHostURL(): string {
-    return `${environment.getApiAddress()}`;
+    return `${this.environment.getApiAddress()}`;
   }
 
   getWebURL(): string {
-    return `${environment.getNgAddress()}`;
+    return `${this.environment.getNgAddress()}`;
   }
 }

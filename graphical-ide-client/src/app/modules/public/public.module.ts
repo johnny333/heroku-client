@@ -7,6 +7,7 @@ import { RegistryPageComponent } from './components/registry-page/registry-page.
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import {HttpModule} from "@angular/http";
 import {FormsModule} from "@angular/forms";
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import {FormsModule} from "@angular/forms";
     RouterModule.forRoot(publicRoutes),
 
   ],
-  declarations: [HomePageComponent, RegistryPageComponent, LoginPageComponent]
+  declarations: [HomePageComponent, RegistryPageComponent, LoginPageComponent, MenuComponent]
 })
 export class PublicModule {
 }

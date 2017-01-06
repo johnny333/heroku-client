@@ -67,11 +67,16 @@ const userService = function () {
         let sync = true;
         let result = null;
         userDB.getSingle({email, password},  (error, res)=> {
-            console.info("login", error, res);
-            let token = jwtToken.sign(res,cert);
-            addToSession( res.id,token);
-            console.info("login", error, res, token);
-            result = token;
+            if(error){
+                console.info("login", error, res);
+                result= error;
+            }
+            if(res){
+                let token = jwtToken.sign(res,cert);
+                addToSession( res.id,token);
+                console.info("login", error, res, token);
+                result = token;
+            }
             sync = false;
         });
         while (sync) {

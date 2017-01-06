@@ -16,7 +16,7 @@ export class ApiUrlPrefix implements IBackendPrefix{
   }
 
   getHostUrlWithParams(urlParams): string {
-    let prepareURL = this.getHostURL();
+    let prepareURL = '';
     urlParams.forEach(item => {
       prepareURL.concat(EApiUrlParts[item]);
     });

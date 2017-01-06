@@ -3,7 +3,8 @@
  */
 import {IRole} from "./roles.interface";
 import {IBaseModel} from "./base-model.interface";
-export interface IUserData extends IBaseModel,ILoginUserData,IPersonalUserData,IAccountUserData{
+export interface IRegisterUserData extends ILoginUserData,IPersonalUserData {}
+export interface IUserData extends IBaseModel,ILoginUserData,IPersonalUserData,IAccountUserData,IError{
 }
 export interface ILoginUserData{
   email:string;
@@ -16,4 +17,7 @@ export interface IPersonalUserData{
 
 export interface IAccountUserData{
   roles: Array<IRole>;
+}
+export interface IError{
+  error:string;
 }

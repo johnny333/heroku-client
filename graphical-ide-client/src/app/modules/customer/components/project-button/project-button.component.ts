@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
+import {IProjectButton} from "../../../../sheards/interfaces/project-button.interface";
 
 @Component({
   selector: 'app-project-button',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-button.component.css']
 })
 export class ProjectButtonComponent implements OnInit {
-
+@Input()projectData: IProjectButton;
+  
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

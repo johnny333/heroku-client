@@ -6,13 +6,14 @@ import {RouterModule} from "@angular/router";
 import { CustomMenuComponent } from './components/custom-menu/custom-menu.component';
 import { ProjectButtonComponent } from './components/project-button/project-button.component';
 import { ProjectViewPageComponent } from './components/project-view-page/project-view-page.component';
+import { ProfileViewPageComponent } from './components/profile-view-page/profile-view-page.component';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forRoot(customerRoutes)
   ],
-  declarations: [CustomerDashboardComponent, CustomMenuComponent, ProjectButtonComponent, ProjectViewPageComponent]
+  declarations: [CustomerDashboardComponent, CustomMenuComponent, ProjectButtonComponent, ProjectViewPageComponent, ProfileViewPageComponent]
 })
 export class CustomerModule {
 }

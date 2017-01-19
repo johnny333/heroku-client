@@ -12,9 +12,12 @@ import {RouterModule} from "@angular/router";
 import 'hammerjs';
 import {Ng2Webstorage} from "ng2-webstorage";
 import {AuthServiceService} from "./sheards/services/auth-service/auth-service.service";
+import {DragulaModule} from "ng2-dragula";
+import { ClassComponent } from './sheards/programming-components/class/class.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ClassComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +26,7 @@ import {AuthServiceService} from "./sheards/services/auth-service/auth-service.s
     FormsModule,
     RouterModule.forRoot(appRoutes),
     Ng2Webstorage,
+    DragulaModule,
     AdminModule,
     CustomerModule,
     PublicModule

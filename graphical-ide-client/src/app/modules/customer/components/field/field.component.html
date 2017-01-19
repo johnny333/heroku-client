@@ -1,0 +1,31 @@
+<ul class="collapsible" data-collapsible="accordion">
+  <li>
+    <div class="collapsible-header">{{getAccessModifier(accessModifier)?getAccessModifier(accessModifier):"Modyfikator"}} {{getType(type)?getType(type):"typ"}} {{name}}</div>
+    <div class="collapsible-body">
+      <form #f="ngForm">
+        <div class="input-field inline">
+          <input id="name" type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
+          <label for="name">name</label>
+        </div>
+      </form>
+      <a class='dropdown-button btn' href='#' data-activates='dropdown1'>{{getType(type)?getType(type):"typ"}}</a>
+      <ul id='dropdown1' class='dropdown-content'>
+        <li *ngFor="let entryType of types" (click)="setType(entryType)">{{entryType}}</li>
+
+      </ul>
+
+      <a class='dropdown-button btn' href='#' data-activates='dropdown2'>{{getAccessModifier(accessModifier)?getAccessModifier(accessModifier):"Modyfikator"}}</a>
+      <ul id='dropdown2' class='dropdown-content'>
+        <li *ngFor="let accessMod of accessModifiers" (click)="setAccessModifier(accessMod)">{{accessMod}}</li>
+      </ul>
+
+
+      <input type="checkbox" id="test5"/>
+      <label for="test5">Red</label>
+
+      <input type="checkbox" id="test6" checked="checked"/>
+      <label for="test6">Yellow</label>
+
+    </div>
+  </li>
+</ul>

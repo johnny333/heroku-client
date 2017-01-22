@@ -1,6 +1,6 @@
 <ul class="collapsible" data-collapsible="accordion">
   <li>
-    <div class="collapsible-header">{{getAccessModifier(accessModifier)?getAccessModifier(accessModifier):"Modyfikator"}} {{getType(type)?getType(type):"typ"}} {{name}}</div>
+    <div class="collapsible-header">{{getComponentName(getAccessModifier(accessModifier),getType(type),name,getter,setter)}}</div>
     <div class="collapsible-body">
       <form #f="ngForm">
         <div class="input-field inline">
@@ -20,11 +20,11 @@
       </ul>
 
 
-      <input type="checkbox" id="test5"/>
-      <label for="test5">Red</label>
+      <input type="checkbox" [(ngModel)]="getter" id="test5"/>
+      <label for="test5">Getter</label>
 
-      <input type="checkbox" id="test6" checked="checked"/>
-      <label for="test6">Yellow</label>
+      <input type="checkbox" [(ngModel)]="setter" id="test6" checked="checked"/>
+      <label for="test6">Setter</label>
 
     </div>
   </li>

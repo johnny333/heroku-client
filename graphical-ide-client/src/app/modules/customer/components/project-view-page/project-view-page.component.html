@@ -1,7 +1,14 @@
 <app-custom-menu></app-custom-menu>
 <div class="row">
-<app-field></app-field>
 
-  <div class="col s10"></div>
-  <div class="col s2"></div>
+  <div  class="col s9      grey lighten-2"  style=" height: 900px ">
+    <ul [dragula]='"lib"' [dragulaModel]='items1' class="col s12 container" style="min-height: 800px; display: block">
+    </ul>
+  </div>
+  <div  class="col s3     orange accent-1" style=" height: 900px ">
+    <ul [dragula]='"lib"' [dragulaModel]='items' class="col s12 container" style="min-height: 800px; display: block">
+     <li><app-class></app-class></li>
+     <li><app-field></app-field></li>
+    </ul>
+  </div>
 </div>

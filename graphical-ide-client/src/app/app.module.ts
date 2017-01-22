@@ -16,8 +16,7 @@ import {DragulaModule} from "ng2-dragula";
 import { ClassComponent } from './sheards/programming-components/class/class.component';
 @NgModule({
   declarations: [
-    AppComponent,
-    ClassComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

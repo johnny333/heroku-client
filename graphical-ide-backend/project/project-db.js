@@ -5,7 +5,7 @@ const openDB = require('json-file-db');
 const moment = require('moment');
 const seqDB = require("../db-settings/sequence-generator");
 const fs = require('fs');
-const projectDB = require('./json-db/project.json');
+const projectDB = openDB('./json-db/project.json');
 
 
 const projectService = function () {

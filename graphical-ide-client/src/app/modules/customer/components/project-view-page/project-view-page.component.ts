@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DragulaService} from "ng2-dragula";
 
 @Component({
   selector: 'app-project-view-page',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectViewPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dragulaService: DragulaService) { }
 
   ngOnInit() {
   }
